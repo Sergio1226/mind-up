@@ -1,0 +1,68 @@
+---
+const recomendaciones = [
+  {
+    title: 'Evaluación Inicial',
+    items: [
+      'Realizar una evaluación completa de la situación',
+      'Identificar factores de riesgo y recursos disponibles',
+      'Establecer prioridades de intervención'
+    ]
+  },
+  {
+    title: 'Establecimiento de Rapport',
+    items: [
+      'Crear un ambiente de confianza y seguridad',
+      'Demostrar empatía genuina',
+      'Mantener una actitud no judgmental'
+    ]
+  },
+  {
+    title: 'Intervención Activa',
+    items: [
+      'Aplicar técnicas apropiadas según el caso',
+      'Involucrar a familia y cuidadores cuando sea apropiado',
+      'Monitorear progreso constantemente'
+    ]
+  },
+  {
+    title: 'Seguimiento',
+    items: [
+      'Establecer plan de seguimiento',
+      'Coordinar con otros profesionales',
+      'Evaluar efectividad de la intervención'
+    ]
+  }
+];
+---
+
+<section id="recomendaciones" class="py-20 px-6 bg-gradient-to-br from-purple-100 to-pink-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+      Recomendaciones
+    </h2>
+    <p class="text-center text-gray-600 mb-16 text-lg">Intervención efectiva con la población escogida</p>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {recomendaciones.map((rec, index) => (
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-xl">{index + 1}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800">{rec.title}</h3>
+          </div>
+          <ul class="space-y-3">
+            {rec.items.map((item) => (
+              <li class="flex items-start gap-3">
+                <div class="bg-purple-100 p-1 rounded-full mt-1">
+                  <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+                </div>
+                <span class="text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

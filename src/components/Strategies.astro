@@ -1,0 +1,84 @@
+---
+const estrategias = [
+  {
+    estrategia: 'Comunicación Verbal',
+    descripcion: 'Usar lenguaje claro, pausado y sin tecnicismos. Adaptar el tono según la situación emocional.',
+    icon: 'message',
+    tips: ['Volumen moderado', 'Ritmo pausado', 'Vocabulario accesible']
+  },
+  {
+    estrategia: 'Comunicación No Verbal',
+    descripcion: 'Mantener lenguaje corporal abierto, contacto visual apropiado y expresiones faciales congruentes.',
+    icon: 'users',
+    tips: ['Postura abierta', 'Contacto visual', 'Gestos empáticos']
+  },
+  {
+    estrategia: 'Escucha Activa',
+    descripcion: 'Demostrar atención plena, validar emociones y hacer preguntas clarificadoras cuando sea necesario.',
+    icon: 'heart',
+    tips: ['Parafrasear', 'Validar emociones', 'No interrumpir']
+  },
+  {
+    estrategia: 'Adaptación al Contexto',
+    descripcion: 'Ajustar el estilo de comunicación según las necesidades específicas y el tipo de discapacidad.',
+    icon: 'target',
+    tips: ['Flexibilidad', 'Observación', 'Retroalimentación']
+  }
+];
+---
+
+<section id="estrategias" class="py-20 px-6">
+  <div class="container mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      Estrategias de Comunicación
+    </h2>
+    <p class="text-center text-gray-600 mb-16 text-lg">Según el contexto de discapacidad</p>
+
+    <div class="max-w-4xl mx-auto space-y-6">
+      {estrategias.map((est) => (
+        <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500">
+          <div class="flex items-start gap-6">
+            <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-2xl transform group-hover:rotate-12 transition-transform duration-500">
+              {est.icon === 'message' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              )}
+              {est.icon === 'users' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              )}
+              {est.icon === 'heart' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+              )}
+              {est.icon === 'target' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="6"/>
+                  <circle cx="12" cy="12" r="2"/>
+                </svg>
+              )}
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">{est.estrategia}</h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">{est.descripcion}</p>
+              <div class="flex flex-wrap gap-2">
+                {est.tips.map((tip) => (
+                  <span class="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+                    {tip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
