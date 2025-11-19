@@ -1,75 +1,110 @@
 ---
 const modelos = [
   {
-    tipo: 'Discapacidad Física',
+    tipo: "Modelo Biopsicosocial",
     estrategias: [
-      'Asegurar accesibilidad del espacio',
-      'Mantener contacto visual al nivel del paciente',
-      'Usar lenguaje claro y directo',
-      'Respetar el ritmo de comunicación'
+      {
+        titulo: "Factores Biológicos",
+        contenido:
+          "Alteraciones neurobiológicas, genética y neuroquímica cerebral",
+      },
+      {
+        titulo: "Factores Psicológicos",
+        contenido: "Impacto en cognición, emociones y comportamiento",
+      },
+      {
+        titulo: "Factores Sociales",
+        contenido: "Estigma, barreras de acceso y apoyo comunitario",
+      },
+      {
+        titulo: "Interacción multidimensional",
+        contenido:
+          "La discapacidad resulta de la combinación de estos factores",
+      },
     ],
-    color: 'blue'
+    color: "purple",
   },
   {
-    tipo: 'Discapacidad Sensorial',
+    tipo: "Estrategias de Intervención",
     estrategias: [
-      'Utilizar lenguaje de señas cuando sea necesario',
-      'Emplear recursos visuales y táctiles',
-      'Hablar de frente y con claridad',
-      'Verificar la comprensión constantemente'
+      {
+        titulo: "Tratamiento farmacológico",
+        contenido: "Antipsicóticos para control de síntomas",
+      },
+      {
+        titulo: "Psicoterapia",
+        contenido: "Terapia cognitivo-conductual y terapia familiar",
+      },
+      {
+        titulo: "Rehabilitación psicosocial",
+        contenido: "Entrenamiento en habilidades sociales y laborales",
+      },
+      {
+        titulo: "Apoyo comunitario",
+        contenido: "Programas de inclusión y redes de soporte social",
+      },
     ],
-    color: 'purple'
+    color: "blue",
   },
-  {
-    tipo: 'Discapacidad Cognitiva',
-    estrategias: [
-      'Usar oraciones cortas y simples',
-      'Repetir información importante',
-      'Proporcionar ejemplos concretos',
-      'Ser paciente y empático'
-    ],
-    color: 'pink'
-  },
-  {
-    tipo: 'Discapacidad Psicosocial',
-    estrategias: [
-      'Crear un ambiente seguro y tranquilo',
-      'Validar emociones y experiencias',
-      'Establecer límites claros',
-      'Mantener consistencia en el abordaje'
-    ],
-    color: 'indigo'
-  }
 ];
 ---
 
-<section id="modelo" class="py-20 px-6">
-  <div class="container mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-      Modelo de Comunicación Cognitiva
+<section id="modelo" class="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
+  <div class="container mx-auto max-w-6xl">
+    <h2
+      class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+    >
+      Comprensión e Intervención
     </h2>
-    <p class="text-center text-gray-600 mb-16 text-lg">Estrategias adaptadas al tipo de discapacidad</p>
-
+    <p class="text-center text-gray-600 mb-16 text-lg">
+      Modelo integral y estrategias terapéuticas basadas en evidencia
+    </p>
     <div class="grid md:grid-cols-2 gap-8">
-      {modelos.map((modelo) => (
-        <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
-          <div class={`bg-gradient-to-r from-${modelo.color}-500 to-${modelo.color}-600 inline-block px-6 py-2 rounded-full mb-6`}>
-            <h3 class="text-xl font-bold text-white">{modelo.tipo}</h3>
+      {
+        modelos.map((modelo) => (
+          <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+            <div
+              class={`bg-gradient-to-r from-${modelo.color}-500 to-${modelo.color}-600 inline-block px-6 py-2 rounded-full mb-6`}
+            >
+              <h3 class="text-xl font-bold text-white">{modelo.tipo}</h3>
+            </div>
+            <ul class="space-y-4">
+              {modelo.estrategias.map((estrategia) => (
+                <li class="group">
+                  <details class="border border-gray-200 rounded-xl p-4 transition-all">
+                    <summary class="flex items-center gap-3 cursor-pointer list-none">
+                      <div
+                        class={`bg-${modelo.color}-100 p-2 rounded-lg group-hover:scale-110 transition-transform`}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class={`text-${modelo.color}-600`}
+                        >
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      </div>
+                      <span class="text-gray-800 font-semibold text-lg">
+                        {estrategia.titulo}
+                      </span>
+                    </summary>
+
+                    <p class="mt-3 text-gray-600 leading-relaxed px-1">
+                      {estrategia.contenido}
+                    </p>
+                  </details>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul class="space-y-4">
-            {modelo.estrategias.map((estrategia) => (
-              <li class="flex items-start gap-3 group">
-                <div class={`bg-${modelo.color}-100 p-2 rounded-lg group-hover:scale-110 transition-transform`}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={`text-${modelo.color}-600`}>
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                  </svg>
-                </div>
-                <span class="text-gray-700 flex-1">{estrategia}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
