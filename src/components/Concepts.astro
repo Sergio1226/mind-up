@@ -1,44 +1,49 @@
 ---
 const conceptos = [
   {
-    title: 'Crisis',
-    description: 'Estado temporal de trastorno y desorganización, caracterizado por la incapacidad del individuo para manejar situaciones particulares usando métodos habituales.',
+    title: 'Síntomas Positivos',
+    description: 'Manifestaciones que "añaden" experiencias anormales: alucinaciones, delirios, y pensamiento desorganizado que dificulta la comunicación coherente.',
     color: 'purple',
-    icon: 'target'
+    icon: 'brain'
   },
   {
-    title: 'Discapacidad',
-    description: 'Condición que resulta de la interacción entre las personas con deficiencias y las barreras debidas a la actitud y al entorno que evitan su participación plena.',
-    color: 'pink',
+    title: 'Síntomas Negativos',
+    description: 'Reducción o pérdida de capacidades normales: apatía, dificultad para iniciar actividades, reducción del habla y del interés social, afectando significativamente la funcionalidad diaria.',
+    color: 'blue',
     icon: 'users'
   },
   {
-    title: 'Intervención',
-    description: 'Conjunto de técnicas y estrategias terapéuticas aplicadas de manera sistemática para ayudar a las personas a superar dificultades y alcanzar el bienestar.',
-    color: 'blue',
-    icon: 'heart'
+    title: 'Síntomas Cognitivos',
+    description: 'Alteraciones en funciones mentales: dificultades en atención, memoria de trabajo, función ejecutiva y velocidad de procesamiento. Estos síntomas impactan la capacidad de aprender, resolver problemas y tomar decisiones.',
+    color: 'purple',
+    icon: 'lightbulb'
   }
 ];
 ---
 
-<section id="conceptos" class="py-20 px-6 bg-white/50 backdrop-blur-sm">
-  <div class="container mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-      Conceptos Básicos
+<section id="conceptos" class="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
+  <div class="container mx-auto max-w-6xl">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+      Conceptos Básicos sobre Esquizofrenia
     </h2>
-    <p class="text-center text-gray-600 mb-16 text-lg">Fundamentos esenciales de la psicología</p>
-
+    <p class="text-center text-gray-600 mb-4 text-lg">
+      Comprendiendo los tres grupos principales de síntomas
+    </p>
+    <p class="text-center text-gray-500 mb-16 text-sm max-w-2xl mx-auto">
+      La esquizofrenia es un trastorno mental complejo que afecta el pensamiento, las emociones y el comportamiento. Conocer sus manifestaciones es clave para un tratamiento efectivo.
+    </p>
+    
     <div class="grid md:grid-cols-3 gap-8">
+      <!-- Mapeo los conceptos y asigno lo que debe ir en el texto y los colores a usar, por alguna razon hay unos colores q no sirven -->
       {conceptos.map((concept) => (
         <div class="group relative">
           <div class={`absolute inset-0 bg-gradient-to-r from-${concept.color}-400 to-${concept.color}-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
-          <div class="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class={`bg-gradient-to-r from-${concept.color}-500 to-${concept.color}-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-500`}>
-              {concept.icon === 'target' && (
+          <div class="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col">
+            <div class={`bg-gradient-to-r from-${concept.color}-500 to-${concept.color}-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-500 flex-shrink-0`}>
+              {concept.icon === 'brain' && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-                  <circle cx="12" cy="12" r="10"/>
-                  <circle cx="12" cy="12" r="6"/>
-                  <circle cx="12" cy="12" r="2"/>
+                  <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+                  <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
                 </svg>
               )}
               {concept.icon === 'users' && (
@@ -49,14 +54,22 @@ const conceptos = [
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                 </svg>
               )}
-              {concept.icon === 'heart' && (
+              {concept.icon === 'lightbulb' && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  <circle cx="12" cy="12" r="5"/>
+                  <line x1="12" y1="1" x2="12" y2="3"/>
+                  <line x1="12" y1="21" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="3" y2="12"/>
+                  <line x1="21" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                 </svg>
               )}
             </div>
             <h3 class="text-2xl font-bold mb-4 text-gray-800">{concept.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{concept.description}</p>
+            <p class="text-gray-600 leading-relaxed flex-grow">{concept.description}</p>
           </div>
         </div>
       ))}

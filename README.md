@@ -6,7 +6,7 @@
 
 ## 📋 Descripción
 
-**MindUp** es una plataforma web educativa diseñada por estudiantes  para comprender y abordar situaciones de crisis en personas con discapacidad. La plataforma ofrece herramientas, estrategias y modelos cognitivos de comunicación adaptados a diferentes tipos de discapacidad.
+**MindUp** es una plataforma web educativa diseñada por estudiantes para comprender y abordar situaciones de crisis en personas con discapacidad. La plataforma ofrece estrategias y modelos cognitivos de comunicación adaptados a diferentes tipos de discapacidad.
 
 
 ## 🎨 Tecnologías Utilizadas
