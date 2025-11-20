@@ -19,6 +19,21 @@ const conceptos = [
     icon: 'lightbulb'
   }
 ];
+
+const colorClasses = {
+  purple: {
+    bg1: "from-purple-400",
+    bg2: "to-purple-600",
+    solid1: "from-purple-500",
+    solid2: "to-purple-600",
+  },
+  blue: {
+    bg1: "from-blue-400",
+    bg2: "to-blue-600",
+    solid1: "from-blue-500",
+    solid2: "to-blue-600",
+  }
+};
 ---
 
 <section id="conceptos" class="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
@@ -37,9 +52,9 @@ const conceptos = [
       <!-- Mapeo los conceptos y asigno lo que debe ir en el texto y los colores a usar, por alguna razon hay unos colores q no sirven -->
       {conceptos.map((concept) => (
         <div class="group relative">
-          <div class={`absolute inset-0 bg-gradient-to-r from-${concept.color}-400 to-${concept.color}-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
+          <div class={`absolute inset-0 bg-gradient-to-r from-${concept.color}-400 to-${concept.color}-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
           <div class="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col">
-            <div class={`bg-gradient-to-r from-${concept.color}-500 to-${concept.color}-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-500 flex-shrink-0`}>
+            <div class={`bg-gradient-to-r from-${concept.color}-500 to-${concept.color}-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-500 flex-shrink-0`}>
               {concept.icon === 'brain' && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                   <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>

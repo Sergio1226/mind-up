@@ -1,44 +1,44 @@
 ---
 const estrategias = [
   {
-    estrategia: 'Comunicación Verbal',
-    descripcion: 'Usar lenguaje claro, pausado y sin tecnicismos. Adaptar el tono según la situación emocional.',
+    estrategia: 'Comunicación Clara y Concreta',
+    descripcion: 'Use frases cortas y directas. Evite metáforas o lenguaje abstracto que pueda generar confusión. Mantenga un tono tranquilo y paciente.',
     icon: 'message',
-    tips: ['Volumen moderado', 'Ritmo pausado', 'Vocabulario accesible']
+    tips: ['Mensajes simples', 'Una idea a la vez', 'Evitar ambigüedades']
   },
   {
-    estrategia: 'Comunicación No Verbal',
-    descripcion: 'Mantener lenguaje corporal abierto, contacto visual apropiado y expresiones faciales congruentes.',
-    icon: 'users',
-    tips: ['Postura abierta', 'Contacto visual', 'Gestos empáticos']
-  },
-  {
-    estrategia: 'Escucha Activa',
-    descripcion: 'Demostrar atención plena, validar emociones y hacer preguntas clarificadoras cuando sea necesario.',
+    estrategia: 'Validación sin Confrontación',
+    descripcion: 'Reconozca las experiencias de su hijo/a sin discutir sobre la realidad de sus percepciones. Enfóquese en los sentimientos, no en el contenido de ideas delirantes.',
     icon: 'heart',
-    tips: ['Parafrasear', 'Validar emociones', 'No interrumpir']
+    tips: ['Escuchar sin juzgar', 'Validar emociones', 'No debatir delirios']
   },
   {
-    estrategia: 'Adaptación al Contexto',
-    descripcion: 'Ajustar el estilo de comunicación según las necesidades específicas y el tipo de discapacidad.',
+    estrategia: 'Mantener la Calma en Crisis',
+    descripcion: 'Durante episodios de agitación, mantenga la distancia física apropiada, hable con voz serena y evite movimientos bruscos. Priorice la seguridad.',
+    icon: 'users',
+    tips: ['Tono de voz suave', 'Espacio personal', 'Ambiente tranquilo']
+  },
+  {
+    estrategia: 'Rutinas y Estructura',
+    descripcion: 'Comunique expectativas claras sobre rutinas diarias, tratamiento y actividades. La predictibilidad reduce la ansiedad y mejora la colaboración.',
     icon: 'target',
-    tips: ['Flexibilidad', 'Observación', 'Retroalimentación']
+    tips: ['Horarios consistentes', 'Recordatorios amables', 'Seguimiento del tratamiento']
   }
 ];
 ---
 
 <section id="estrategias" class="py-20 px-6">
   <div class="container mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    <h2 class="text-4xl md:text-5xl font-bold text-center pb-1 md:pb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
       Estrategias de Comunicación
     </h2>
-    <p class="text-center text-gray-600 mb-16 text-lg">Según el contexto de discapacidad</p>
+    <p class="text-center text-gray-600 mb-16 text-lg">Guía para padres de familia con hijos que viven con esquizofrenia</p>
 
     <div class="max-w-4xl mx-auto space-y-6">
       {estrategias.map((est) => (
-        <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500">
-          <div class="flex items-start gap-6">
-            <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-2xl transform group-hover:rotate-12 transition-transform duration-500">
+        <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row items-start gap-6">
+            <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-2xl transition-transform duration-300">
               {est.icon === 'message' && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
