@@ -1,62 +1,158 @@
+---
+import Icon from "./Icon.astro";
+
+const cards = [
+  {
+    icon: "question",
+    title: "¿Que es la esquizofrenia?",
+    color:"from-purple-50 to-purple-100",
+    class:"purple-600 ",
+    description:
+      "La esquizofrenia es un trastorno mental  que afecta el pensamiento y las emociones.",
+  },
+  {
+    icon: "users",
+    class:"pink-600 ",
+    color:"from-pink-50 to-pink-100",
+    title: "Apoyo social",
+    description:
+      "El acompañamiento emocional y familiar fortalece el proceso de recuperación",
+  },
+  {
+    icon: "clinic",
+    class:"blue-600",
+    color:"from-blue-50 to-blue-100",
+    title: "Tratamiento",
+    description:
+      "El tratamiento se basa en la intervención psicológica para mejorar la calidad de vida",
+  },
+  {
+    icon: "checked",
+    class:"green-600",
+    color:"from-green-50 to-green-100",
+    title: "Recuperacion posible",
+    description:
+      "La recuperación es un proceso real y posible para cada persona.",
+  },
+];
+---
 
 <section id="inicio" class="pt-32 pb-20 px-6">
   <div class="container mx-auto">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
       <div class="space-y-8 animate-slide-left">
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-            Intervención Psicológica
+        <h1 class="text-4xl md:text-7xl font-bold leading-tight">
+          <span
+            class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
+          >
+            Comprendiendo la
           </span>
           <br />
-          <span class="text-gray-800">en Personas con Discapacidad</span>
+          <span class="text-gray-800">Esquizofrenia</span>
         </h1>
         <p class="text-xl text-gray-600 leading-relaxed">
-          Plataforma diseñada por estudiantes para orientar, educar y acompañar a l  
+          Plataforma diseñada por estudiantes para orientar, educar y acompañar
+          con información confiable sobre la esquizofrenia y su manejo integral.
         </p>
-        <div class="flex gap-4">
-          <a 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a
             href="#conceptos"
-            class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+            class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-fit"
           >
             Explorar Contenido
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
+          </a>
+          <a
+            target="_blank"
+            href="https://saludtotal.com.co/plan-de-beneficios-en-salud/guia-de-lineas-de-atencion-en-salud-mental-y-prevencion-del-suicidio/"
+            class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-fit"
+          >
+            Linea de ayuda
+            <Icon name="phone" class="blue-600 size-6"/>
           </a>
         </div>
       </div>
 
-      <div class="relative animate-slide-right">
-        <div class="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8">
-          <div class="grid grid-cols-2 gap-4">
-            
-
-            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-600 mb-3">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
-              </svg>
-              <p class="font-semibold text-gray-800">Crisis de Discapacidad</p>
-            </div>
-
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-3">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-              </svg>
-              <p class="font-semibold text-gray-800">Modelo Cognitivo</p>
-            </div>
-
-            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mb-3">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <p class="font-semibold text-gray-800">Estrategias Efectivas</p>
-            </div>
+      <div class="relative animate-slide-right max-w-full lg:mt-12 ">
+        <div
+          class="relative bg-white/80 backdrop-blur-lg shadow-lg rounded-3xl p-8 transform"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500 transform"
+          >
+            {
+              cards.map((card) => (
+                <div class={`card bg-gradient-to-br ${card.color}  p-6 rounded-2xl cursor-pointer min-h-[116px]`}>
+                  <div class="card-front alingn-center ">
+                    <Icon name={card.icon} class={`text-${card.class} mb-3`} />
+                    <p class="font-semibold text-gray-800">{card.title}</p>
+                  </div>
+                  <div class="card-back hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <p class="text-gray-600 leading-relaxe text-sm">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+  const loads: Element[] = [];
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const hijos = card.children;
+      if (!loads.includes(card)) {
+        loads.push(card);
+        card.classList.toggle("rotate360");
+        setTimeout(() => {
+          hijos[0].classList.toggle("hidden");
+          hijos[1].classList.toggle("hidden");
+        }, 600);
+        setTimeout(() => {
+          loads.shift();
+        }, 1200);
+      }
+    });
+  });
+</script>
+<style>
+  .card {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    transition:
+      transform 2s,
+      width 0.6s ease,
+      height 0.6s ease;
+  }
+
+  .rotate360 {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    transition: opacity 0.3s ease;
+  }
+
+  .grid {
+    transition: all 0.6s ease;
+  }
+</style>

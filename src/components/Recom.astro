@@ -1,68 +1,79 @@
 ---
 const recomendaciones = [
   {
-    title: 'Evaluación Inicial',
+    title: "Reconocimiento de Síntomas",
     items: [
-      'Realizar una evaluación completa de la situación',
-      'Identificar factores de riesgo y recursos disponibles',
-      'Establecer prioridades de intervención'
-    ]
+      "Identificar cambios en el habla y pensamiento desorganizado",
+      "Observar presencia de alucinaciones o ideas delirantes",
+      "Detectar aislamiento social y falta de motivación",
+    ],
   },
   {
-    title: 'Establecimiento de Rapport',
+    title: "Comunicación Asertiva",
     items: [
-      'Crear un ambiente de confianza y seguridad',
-      'Demostrar empatía genuina',
-      'Mantener una actitud no judgmental'
-    ]
+      "Hablar con claridad y frases sencillas",
+      "No confrontar las creencias delirantes directamente",
+      "Validar la emoción sin aceptar la distorsión de la realidad",
+    ],
   },
   {
-    title: 'Intervención Activa',
+    title: "Manejo del Entorno",
     items: [
-      'Aplicar técnicas apropiadas según el caso',
-      'Involucrar a familia y cuidadores cuando sea apropiado',
-      'Monitorear progreso constantemente'
-    ]
+      "Reducir estímulos excesivos como ruido y multitudes",
+      "Mantener horarios consistentes para comidas y descanso",
+      "Crear un espacio seguro y predecible en el hogar",
+    ],
   },
   {
-    title: 'Seguimiento',
+    title: "Acompañamiento Terapéutico",
     items: [
-      'Establecer plan de seguimiento',
-      'Coordinar con otros profesionales',
-      'Evaluar efectividad de la intervención'
-    ]
-  }
+      "Garantizar la adherencia al tratamiento medicamentoso",
+      "Facilitar el acceso a terapia psicológica especializada",
+      "Participar en grupos de apoyo para entender mejor la condición",
+    ],
+  },
 ];
 ---
 
-<section id="recomendaciones" class="py-20 px-6 bg-gradient-to-br from-purple-100 to-pink-100">
+<section
+  id="recomendaciones"
+  class="py-20 px-6 bg-gradient-to-br from-purple-100 to-pink-100"
+>
   <div class="container mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-      Recomendaciones
+    <h2
+      class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+    >
+      Orientaciones de Apoyo
     </h2>
-    <p class="text-center text-gray-600 mb-16 text-lg">Intervención efectiva con la población escogida</p>
+    <p class="text-center text-gray-600 mb-16 text-lg">
+      Recomendaciones para un acompañamiento comprensivo
+    </p>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      {recomendaciones.map((rec, index) => (
-        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="bg-gradient-to-r from-purple-500 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center">
-              <span class="text-white font-bold text-xl">{index + 1}</span>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto transform transition-all duration-1000"
+    >
+      {
+        recomendaciones.map((rec, index) => (
+          <div class=" bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative">
+            <div class="flex items-center gap-4 mb-6 ">
+              <div class="bg-gradient-to-r from-pink-400 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center ">
+                <span class="text-white font-bold text-xl">{index + 1}</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">{rec.title}</h3>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800">{rec.title}</h3>
+            <ul class="space-y-3">
+              {rec.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <div class="bg-purple-100 p-1 rounded-full mt-1 animate-pulse">
+                    <div class="w-2 h-2 bg-purple-600 rounded-full" />
+                  </div>
+                  <span class="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul class="space-y-3">
-            {rec.items.map((item) => (
-              <li class="flex items-start gap-3">
-                <div class="bg-purple-100 p-1 rounded-full mt-1">
-                  <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
-                </div>
-                <span class="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
